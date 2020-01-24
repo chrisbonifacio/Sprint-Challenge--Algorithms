@@ -17,3 +17,13 @@ c) This is a recursive function that will subtract 1 from the value of bunnies u
 Since the number of executions depends on the size of the input, I believe the time complexity is O(n)
 
 ## Exercise II
+
+def save_eggs(n):
+
+    for f in range(n): O(n)
+      throw egg
+
+      if egg breaks:
+        return f - 1
+
+Runtime Complexity of O(n)
