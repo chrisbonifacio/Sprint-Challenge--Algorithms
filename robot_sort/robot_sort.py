@@ -99,17 +99,31 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
+
+        # as the robot moves right, swap for items greater than it's held item
+        # if robot is at the end of the list, swap and go left to the start
+
         self.swap_item()
 
-        # loop through n-1 elements
-        while self.can_move_right:
+        while self.can_move_right() is True:
             self.move_right()
+
             if self.compare_item() == 1:
                 self.swap_item()
-            elif self.compare_item == -1:
-                continue
-            elif self.compare_item() == 0:
-                continue
+
+            if self.can_move_right() is False:
+                for i in range(99):
+                    self.move_left()
+
+                    if self.compare_item() == None:
+                        self.swap_item()
+                        self.move_right()
+                        if self.can_move_right() is True:
+                            self.swap_item()
+                        break
+
+            print("POSITION:", self._position)
+            print("HELD ITEM:", self._item)
 
 
 if __name__ == "__main__":
